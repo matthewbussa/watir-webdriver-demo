@@ -3,6 +3,6 @@ Given(/^I am on the home page$/) do
 end
 
 Then(/^a screenshot is captured$/) do
-	filename = @browser.title.to_s + '-' + Time.now.to_i.to_s + '.png'
+	filename = $screenshots_path.to_s + @browser.title.to_s + '-' + Time.now.to_i.to_s + '.png'
 	@browser.screenshot.save filename
 end
