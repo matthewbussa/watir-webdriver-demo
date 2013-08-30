@@ -4,6 +4,9 @@ Feature:
 	So that I can capture a screenshot
 
 
+ Scenario: "Capture screenshot for one device and platform"
+ 	Given I am on the home page
+ 	Then a screenshot is captured
 
  Scenario Outline: "Multiple Device Testing"
 	Given a <platform> device using the <browser> browser
