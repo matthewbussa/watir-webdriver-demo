@@ -13,7 +13,16 @@ end
 
 
 Then(/^a screenshot is captured$/) do
-	filename = $screenshots_path.to_s + @browser.title.to_s + '-' + Time.now.to_i.to_s + '.png'
-	@browser.screenshot.save filename
+
+	sleep 3
+	%x(adb shell /system/bin/screencap -p /sdcard/screenshot.png)
+	time = Time.now.to_i.to_s
+	puts 'current directory is' + `pwd`
+	%x(adb pull /sdcard/screenshot.png ./screenshots/screenshot.png)
+	FileUtils.mv('./screenshots/screenshot.png', './screenshots/screenshot' + time + '.png')
+	%x(adb shell rm /sdcard/screenshot.png)
+
+#	filename = $screenshots_path.to_s + @browser.title.to_s + '-' + time + '.png'
+#	@browser.driver.save_screenshot filename
 end
 

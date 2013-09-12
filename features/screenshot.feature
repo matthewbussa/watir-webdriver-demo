@@ -8,12 +8,4 @@ Feature:
  	Given I am on the home page
  	Then a screenshot is captured
 
- Scenario Outline: "Multiple Device Testing"
-	Given a <platform> device using the <browser> browser
- 	And I am on the home page
-    Then a screenshot is captured
-
-    Examples:
-        |platform|browser|
-        |desktop |chrome |
 
