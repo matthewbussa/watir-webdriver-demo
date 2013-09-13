@@ -7,5 +7,3 @@ Feature:
  Scenario: "Capture screenshot for one device and platform"
  	Given I am on the home page
  	Then a screenshot is captured
-
-

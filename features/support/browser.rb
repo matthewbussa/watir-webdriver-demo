@@ -1,40 +1,38 @@
 module Browser
 
-
-
-
 	def self.setup_browser(platform="desktop",browser="firefox")
 
+		setup_android()
 
-		#firefox
-#		browser = Watir::Browser.new :firefox
+	end
 
-		#chrome
-		#spawn 'chromedriver'
-		#browser = Watir::Browser.new :chrome
+	def self.setup_ios()
 
+		capabilities = 
+		{
+			'browserName' => 'iOS',
+		  	'platform' => 'Mac',
+		  	'version' => '6.1',
+			'app' => 'safari'
+		}
 
-		#ios
-		# capabilities = 
-		# {
-		# 	'browserName' => 'iOS',
-		#   	'platform' => 'Mac',
-		#   	'version' => '6.1',
-		# 	'app' => 'safari'
-		# }
+		server_url = "http://localhost:4723/wd/hub/"
+		driver = Selenium::WebDriver.for(:remote, :desired_capabilities => capabilities, :url => server_url)#, :profile => profile)
+		browser = Watir::Browser.new driver
+		browser
+	end
 
-		# 	server_url = "http://localhost:4723/wd/hub/"
-		# 	driver = Selenium::WebDriver.for(:remote, :desired_capabilities => capabilities, :url => server_url)#, :profile => profile)
-		# 	browser = Watir::Browser.new driver
+	def self.setup_chrome()
+		spawn 'chromedriver'
+		browser = Watir::Browser.new :chrome
+		browser
+	end
 
+	def self.setup_firefox()
+		Watir::Browser.new :firefox
+	end
 
-
-
-
-      # my_proxy = "10.50.62.65:80"
-      # proxy = Selenium::WebDriver::Proxy.new(
-      #     :http     => my_proxy
-      # )
+	def self.setup_android()
 
 		capabilities =
 		{
@@ -46,12 +44,7 @@ module Browser
 		driver = Selenium::WebDriver.for(:remote, :desired_capabilities => capabilities, :url => server_url)#, :profile => profile)
 		browser = Watir::Browser.new driver
 		browser.driver.manage.timeouts.implicit_wait = 30
-
-		# 	#browser.driver.manage.timeouts.page_load = 30
-
-
-
-      browser
+		browser
 
 	end
 

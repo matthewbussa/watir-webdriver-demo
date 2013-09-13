@@ -5,7 +5,7 @@ require 'fileutils'
 $screenshots_path = 'screenshots/'
 
 #clean up from last test run
-FileUtils.rm_rf(Dir.glob('#{$screenshots_path}/*.png'))
+FileUtils.rm_rf(Dir.glob('#{$screenshots_path}*.png'))
 
 
 Before do
