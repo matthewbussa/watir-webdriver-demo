@@ -6,8 +6,8 @@ module Browser
 		browser = ""
 		if (platform == 'android')
 			browser = setup_android
-		elsif (platform == 'ios')
-			browser = setup_ios
+		elsif (platform == 'iPhone' || platform == 'iPad')
+			browser = setup_ios(platform)
 		elsif (platform == 'chrome')
 			browser = setup_chrome
 		end
@@ -15,10 +15,11 @@ module Browser
 		browser
 	end
 
-	def self.setup_ios()
+	def self.setup_ios(type)
 
 		capabilities = 
 		{
+			'device' => "#{type} Simulator",
 			'browserName' => 'iOS',
 		  	'platform' => 'Mac',
 		  	'version' => '6.1',

@@ -21,7 +21,7 @@ end
 
 
 AfterStep do
-	if (ENV['PLATFORM'] == 'ios')
+	if (ENV['PLATFORM'] == 'iPhone' || ENV['PLATFORM'] == 'iPad')
 		sleep 2
 	else
 		@browser.wait
