@@ -2,8 +2,17 @@ module Browser
 
 	def self.setup_browser(platform="desktop",browser="firefox")
 
-		setup_android()
+		platform = ENV['PLATFORM']
+		browser = ""
+		if (platform == 'android')
+			browser = setup_android
+		elsif (platform == 'ios')
+			browser = setup_ios
+		elsif (platform == 'chrome')
+			browser = setup_chrome
+		end
 
+		browser
 	end
 
 	def self.setup_ios()

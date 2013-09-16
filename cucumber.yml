@@ -1,1 +1,4 @@
-default: --no-source --color --format pretty
+default: PLATFORM=chrome --no-source --color --format html --out reports
+ios: PLATFORM=ios --format html --out=reports/cucumber_ios.html
+android: PLATFORM=android --format html --out=reports/cucumber_android.html
+chrome: PLATFORM=chrome --format html --out=reports/cucumber_chrome.html
