@@ -42,7 +42,6 @@ module Browser
 	end
 
 	def self.setup_android()
-
 		capabilities =
 		{
 		'app' => 'chrome',
