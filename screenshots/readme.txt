@@ -1,1 +1,0 @@
-Directory screenshots will be stored in

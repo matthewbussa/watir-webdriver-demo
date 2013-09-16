@@ -14,10 +14,17 @@ Before do
 end
 
 at_exit do
-	@browser.close
+	if (ENV['PLATFORM'] == 'chrome')	
+		@browser.close
+	end
 end
 
 
 AfterStep do
-	@browser.wait
+	if (ENV['PLATFORM'] == 'ios')
+		sleep 2
+	else
+		@browser.wait
+	end
+
 end
