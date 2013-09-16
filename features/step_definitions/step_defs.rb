@@ -1,5 +1,11 @@
 Given(/^I am on the home page$/) do
-	@browser.goto 'http://www.cnn.com'
+	@browser.goto 'https://retailuat3.alldata.net/newyorkandcompany'
+end
+
+When(/^I login$/) do
+	@browser.text_field(:id=>"username_input").set 'adsdemo0'
+	@browser.text_field(:id=>"password_input").set 'tropical1'
+	@browser.link(:id=>"btnLogin").click
 end
 
 Then(/^a screenshot is captured$/) do
@@ -7,6 +13,8 @@ Then(/^a screenshot is captured$/) do
 	sleep 3
 	time = Time.now.to_i.to_s
 	platform = ENV['PLATFORM']
+	puts "Platform #{platform}"
+
 	filename = $screenshots_path.to_s + @browser.title.to_s + '_' + platform + '_' + time + '.png'
 
 	if ( platform == 'android')
