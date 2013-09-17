@@ -33,6 +33,7 @@ module Browser
 	end
 
 	def self.setup_chrome()
+		spawn 'killall chromedriver'
 		spawn 'chromedriver'
 		browser = Watir::Browser.new :chrome
 		browser

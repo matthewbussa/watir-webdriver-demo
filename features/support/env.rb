@@ -13,6 +13,7 @@ Before do
 	@browser = Browser.setup_browser
 end
 
+
 AfterStep do
 	if (ENV['PLATFORM'] == 'iPhone' || ENV['PLATFORM'] == 'iPad')
 		sleep 2
