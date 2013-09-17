@@ -13,13 +13,6 @@ Before do
 	@browser = Browser.setup_browser
 end
 
-at_exit do
-	if (ENV['PLATFORM'] == 'chrome')	
-		@browser.close
-	end
-end
-
-
 AfterStep do
 	if (ENV['PLATFORM'] == 'iPhone' || ENV['PLATFORM'] == 'iPad')
 		sleep 2
