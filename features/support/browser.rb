@@ -1,6 +1,6 @@
 module Browser
 
-	def self.setup_browser(platform="desktop",browser="firefox")
+	def self.setup_browser()
 
 		platform = ENV['PLATFORM']
 		browser = ""
