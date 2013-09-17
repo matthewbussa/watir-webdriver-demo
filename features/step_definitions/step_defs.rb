@@ -18,7 +18,6 @@ Then(/^a screenshot is captured$/) do
 
 	if ( platform == 'android')
 		%x(adb shell /system/bin/screencap -p /sdcard/screenshot.png)
-		puts 'current directory is' + `pwd`
 		%x(adb pull /sdcard/screenshot.png ./screenshots/screenshot.png)
 		FileUtils.mv('./screenshots/screenshot.png', filename)
 		%x(adb shell rm /sdcard/screenshot.png)
