@@ -26,5 +26,8 @@ Then(/^a screenshot is captured$/) do
 		filename = $screenshots_path.to_s + @browser.title.to_s + "_#{platform}_" + time + '.png'
 		@browser.driver.save_screenshot filename
 	end
+
+	embed '../' + filename, 'image/png'
+
 end
 
