@@ -1,4 +1,0 @@
-module EnvData
-
-
-end
