@@ -13,7 +13,6 @@ Then(/^a screenshot is captured$/) do
 	sleep 3
 	time = Time.now.to_i.to_s
 	platform = ENV['PLATFORM']
-	puts "Platform #{platform}"
 
 	filename = $screenshots_path.to_s + @browser.title.to_s + '_' + platform + '_' + time + '.png'
 
@@ -24,7 +23,7 @@ Then(/^a screenshot is captured$/) do
 		FileUtils.mv('./screenshots/screenshot.png', filename)
 		%x(adb shell rm /sdcard/screenshot.png)
 	else
-		filename = $screenshots_path.to_s + @browser.title.to_s + '_#{platform}_' + time + '.png'
+		filename = $screenshots_path.to_s + @browser.title.to_s + "_#{platform}_" + time + '.png'
 		@browser.driver.save_screenshot filename
 	end
 end
