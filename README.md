@@ -2,6 +2,8 @@ Demo using the same cucumber test to test a web site on Chrome, iPhone, iPad, an
 
 Software Requirements
 
+-Chrome Driver v2.2
+
 -Appium - http://appium.io
 
 -Genymotion - http://www.genymotion.com
