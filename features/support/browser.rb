@@ -36,6 +36,7 @@ module Browser
 
 	def self.setup_firefox()
 		browser = Watir::Browser.new :firefox, :profile => 'default'
+		browser.driver.manage.window.maximize
 		browser
 	end
 
@@ -43,13 +44,9 @@ module Browser
 		spawn 'killall chromedriver'
 		spawn 'chromedriver'
 		browser = Watir::Browser.new :chrome
-
 		browser
 	end
 
-	def self.setup_firefox()
-		Watir::Browser.new :firefox
-	end
 
 	def self.setup_android()
 		capabilities =

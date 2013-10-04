@@ -8,4 +8,3 @@ Then(/^a screenshot is captured$/) do
 	embed '../' + Screenshot.capture_screenshot($screenshots_path, platform, @browser), 'image/png'
 
 end
-
