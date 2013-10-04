@@ -1,5 +1,6 @@
 default: PLATFORM=chrome --no-source --color
-ios: PLATFORM=iPhone --format html --out=reports/cucumber_ios.html
+iphone: PLATFORM=iPhone --format html --out=reports/cucumber_ios.html
 android: PLATFORM=android --format html --out=reports/cucumber_android.html
 chrome: PLATFORM=chrome --format html --out=reports/cucumber_chrome.html
 ipad: PLATFORM=iPad --format html --out=reports/cucumber_ipad.html
+firefox: PLATFORM=firefox --format html --out=reports/cucumber_firefox.html

@@ -10,6 +10,8 @@ module Browser
 			browser = setup_ios(platform)
 		elsif (platform == 'chrome')
 			browser = setup_chrome
+		elsif (platform == 'firefox')
+			browser = setup_firefox
 		end
 
 		browser
@@ -32,10 +34,16 @@ module Browser
 		browser
 	end
 
+	def self.setup_firefox()
+		browser = Watir::Browser.new :firefox, :profile => 'default'
+		browser
+	end
+
 	def self.setup_chrome()
 		spawn 'killall chromedriver'
 		spawn 'chromedriver'
 		browser = Watir::Browser.new :chrome
+
 		browser
 	end
 
