@@ -11,3 +11,10 @@ Software Requirements
    -Android VM setup with Genymotion with Chrome installed
 
 -iOS Simulator
+
+
+With the XCode 5.0, Apple removed the ability to launch built in applications.  This means that if you use XCode 5.0 or above, Appium will not launch Mobile safari, which is what the tests are setup to do.
+
+No fear, the solution is to ensure you have XCode 4.6.3 and iOS Simulator 6.1.  You can download the older version here:  https://developer.apple.com/downloads/index.action#
+
+Appium has provided some documentation on how to switch between versions of XCode:  https://github.com/appium/appium/blob/master/docs/running-on-osx.md
